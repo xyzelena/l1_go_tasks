@@ -6,6 +6,10 @@ import (
 )
 
 func main() {
+	Task1()
+}
+
+func Task1() {
 	fmt.Println("<-- Task 1 Human. Example with embedded struct -->")
 
 	h := &human.Human{}
