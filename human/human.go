@@ -17,5 +17,3 @@ func (h Human) GetName() string {
 func (h Human) SayHello() {
 	fmt.Println("Hello, my name is ", h.GetName())
 }
-
-

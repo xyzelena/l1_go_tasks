@@ -1,0 +1,53 @@
+version: 2
+
+run:
+  timeout: 5m
+  tests: true
+  skip-dirs:
+    - vendor
+
+output:
+  format: colored-line-number
+
+linters-settings:
+  govet:
+    shadow: true
+  cyclop:
+    max-complexity: 15
+  goconst:
+    min-len: 2
+    min-occurrences: 2
+  misspell:
+    locale: US
+  lll:
+    line-length: 140
+  funlen:
+    lines: 100
+    statements: 50
+
+linters:
+  enable:
+    - errcheck
+    - govet
+    - ineffassign
+    - staticcheck
+    - unused
+    - misspell
+    - goconst
+    - cyclop
+    - funlen
+    - lll
+    - gosec
+
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - funlen
+        - goconst
+        - cyclop
+        - errcheck
+        - gosec
+
+  max-issues-per-linter: 0
+  max-same-issues: 0

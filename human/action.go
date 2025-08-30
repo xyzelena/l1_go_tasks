@@ -4,7 +4,7 @@ import "fmt"
 
 type Action struct {
 	Human // Встроенная структура (embedded struct) - аналог наследования
-	age int
+	age   int
 }
 
 func (a *Action) SetAge(age int) {
@@ -16,8 +16,8 @@ func (a Action) GetAge() int {
 }
 
 func (a Action) Introduce() {
-	fmt.Println("Hi! I'm ", 
-	a.GetName(),
-	" and my age is: ", 
-	a.GetAge())
+	fmt.Println("Hi! I'm ",
+		a.GetName(),
+		" and my age is: ",
+		a.GetAge())
 }
