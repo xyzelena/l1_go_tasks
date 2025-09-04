@@ -1,7 +1,7 @@
 # Переменные
 BINARY_NAME=l1_go_tasks
 MAIN_PATH=./main.go
-GOLANGCI_LINT_VERSION=v2.4.0
+GOLANGCI_LINT_VERSION=latest
 
 # Цвета для вывода
 GREEN=\033[0;32m
@@ -9,7 +9,7 @@ YELLOW=\033[1;33m
 RED=\033[0;31m
 NC=\033[0m # No Color
 
-.PHONY: help build run clean test lint fmt vet deps install-tools
+.PHONY: help build run run-race clean test lint fmt vet deps install-tools
 
 # Команда по умолчанию
 .DEFAULT_GOAL := help
@@ -20,6 +20,7 @@ help:
 	@echo ""
 	@echo "  ${GREEN}build${NC}        - собрать приложение"
 	@echo "  ${GREEN}run${NC}          - запустить приложение"
+	@echo "  ${GREEN}run-race${NC}     - запустить приложение с race detector"
 	@echo "  ${GREEN}clean${NC}        - очистить собранные файлы"
 	@echo ""
 	@echo "  ${YELLOW}test${NC}         - запустить тесты"
@@ -34,6 +35,9 @@ help:
 	@echo "  ${RED}deps${NC}         - скачать зависимости"
 	@echo "  ${RED}install-tools${NC} - установить необходимые инструменты"
 	@echo "  ${RED}mod-tidy${NC}     - очистить go.mod"
+	@echo ""
+	@echo "  ${GREEN}check${NC}        - полная проверка (fmt + vet + lint + test)"
+	@echo "  ${GREEN}ci${NC}           - CI/CD проверки"
 
 ## build: собрать приложение
 build:
@@ -45,6 +49,11 @@ build:
 run:
 	@echo "${GREEN}Запуск приложения...${NC}"
 	go run $(MAIN_PATH)
+
+## run-race: запустить приложение с race detector
+run-race:
+	@echo "${GREEN}Запуск приложения с race detector...${NC}"
+	go run -race .
 
 ## clean: очистить собранные файлы
 clean:
