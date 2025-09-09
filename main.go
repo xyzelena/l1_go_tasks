@@ -4,10 +4,12 @@ import (
 	"fmt"
 	"l1/human"
 	"l1/squaring"
+	"l1/workers"
 )
 
 func main() {
 	Task1()
+	Task3()
 }
 
 func Task1() {
@@ -36,4 +38,14 @@ func Task1() {
 	fmt.Println()
 	fmt.Println("2. Variant with wait group:")
 	squaring.Squaring2()
+}
+
+func Task3() {
+	fmt.Println()
+	fmt.Println("<-- Task 3 Workers. Example with N workers reading from channel -->")
+
+	countWorkers := 3
+	fmt.Printf("Запускаем %d воркеров...\n", countWorkers)
+
+	workers.DoWorkers(countWorkers)
 }
