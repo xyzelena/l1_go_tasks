@@ -3,7 +3,10 @@ package workers
 import (
 	"context"
 	"fmt"
+	"os"
+	"os/signal"
 	"sync"
+	"syscall"
 	"time"
 )
 
@@ -14,13 +17,19 @@ func Worker(id int, ch <-chan int, wg *sync.WaitGroup) {
 		fmt.Println("Worker", id, ":", data)
 	}
 
-	fmt.Println("Worker", id, "завершён")
+	fmt.Println("Worker", id, "finished")
 }
 
 func DoWorkers(countWorkers int) {
 	ch := make(chan int, 10)
 
-	ctx, cancel := context.WithCancel(context.Background())
+	// Контекст для сигналов
+	sigCtx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
+	defer stop()
+
+	// Таймаут 10 секунд поверх сигнального контекста
+	ctx, cancel := context.WithTimeout(sigCtx, 10*time.Second)
+	defer cancel()
 
 	wg := sync.WaitGroup{}
 
@@ -30,8 +39,10 @@ func DoWorkers(countWorkers int) {
 		go Worker(i, ch, &wg)
 	}
 
-	// Главная горутина постоянно записывает данные в канал
+	//главный воркер, который генерирует числа
 	go func() {
+		defer close(ch)
+
 		for i := 0; ; i++ {
 			select {
 			case <-ctx.Done():
@@ -42,11 +53,15 @@ func DoWorkers(countWorkers int) {
 		}
 	}()
 
-	time.Sleep(5 * time.Second)
+	<-ctx.Done()
 
-	cancel()
-	close(ch)
+	if ctx.Err() == context.DeadlineExceeded {
+		fmt.Println("Stopped by timeout")
+	} else {
+		fmt.Println("Stopped by signal")
+	}
+
 	wg.Wait()
 
-	fmt.Println("Все воркеры завершены")
+	fmt.Println("All workers are finished")
 }
