@@ -4,12 +4,14 @@ import (
 	"fmt"
 	"l1/human"
 	"l1/squaring"
+	"l1/timeoutChannel"
 	"l1/workers"
 )
 
 func main() {
 	Task1()
-	Task3()
+	Task3_4()
+	Task5()
 }
 
 func Task1() {
@@ -40,12 +42,19 @@ func Task1() {
 	squaring.Squaring2()
 }
 
-func Task3() {
+func Task3_4() {
 	fmt.Println()
-	fmt.Println("<-- Task 3 Workers. Example with N workers reading from channel -->")
+	fmt.Println("<-- Task 3 and 4 Workers. Example with N workers reading from channel -->")
 
 	countWorkers := 3
 	fmt.Printf("Запускаем %d воркеров...\n", countWorkers)
 
 	workers.DoWorkers(countWorkers)
+}
+
+func Task5() {
+	fmt.Println()
+	fmt.Println("<-- Task 5 Timeout per channel -->")
+
+	timeoutChannel.TimeoutChannel()
 }
