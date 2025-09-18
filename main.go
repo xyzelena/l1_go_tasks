@@ -9,9 +9,10 @@ import (
 )
 
 func main() {
-	Task1()
-	Task3_4()
-	Task5()
+	Task1()   //Human
+	Task2()   //Squaring
+	Task3_4() //Workers with correct completion by pressing Ctrl+C (SIGINT)
+	Task5()   //Timeout per channel
 }
 
 func Task1() {
@@ -25,11 +26,11 @@ func Task1() {
 	a := &human.Action{}
 	a.SetName("Ivan")
 	a.SetAge(45)
-
 	a.Introduce()
-
 	a.SayHello()
+}
 
+func Task2() {
 	fmt.Println()
 	fmt.Println("<-- Task 2 Squaring. Example with goroutines -->")
 
@@ -45,9 +46,10 @@ func Task1() {
 func Task3_4() {
 	fmt.Println()
 	fmt.Println("<-- Task 3 and 4 Workers. Example with N workers reading from channel -->")
+	fmt.Println("<-- with completion by pressing Ctrl+C -->")
 
 	countWorkers := 3
-	fmt.Printf("Запускаем %d воркеров...\n", countWorkers)
+	fmt.Printf("Start %d workers...\n", countWorkers)
 
 	workers.DoWorkers(countWorkers)
 }
