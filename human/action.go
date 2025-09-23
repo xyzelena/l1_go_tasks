@@ -3,7 +3,7 @@ package human
 import "fmt"
 
 type Action struct {
-	Human // Встроенная структура (embedded struct) - аналог наследования
+	Human // embedded struct
 	age   int
 }
 

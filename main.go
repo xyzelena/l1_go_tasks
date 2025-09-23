@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"l1/goroutineStops"
 	"l1/human"
 	"l1/squaring"
 	"l1/timeoutChannel"
@@ -9,10 +10,11 @@ import (
 )
 
 func main() {
-	Task1()   //Human
-	Task2()   //Squaring
-	Task3_4() //Workers with correct completion by pressing Ctrl+C (SIGINT)
-	Task5()   //Timeout per channel
+	// Task1()   //Human
+	// Task2()   //Squaring
+	// Task3_4() //Workers with correct completion by pressing Ctrl+C (SIGINT)
+	// Task5()   //Timeout per channel
+	Task6() //Goroutine Stops
 }
 
 func Task1() {
@@ -59,4 +61,11 @@ func Task5() {
 	fmt.Println("<-- Task 5 Timeout per channel -->")
 
 	timeoutChannel.TimeoutChannel()
+}
+
+func Task6() {
+	fmt.Println()
+	fmt.Println("<-- Task 6 Goroutine Stops -->")
+
+	goroutineStops.GoroutineStops()
 }
