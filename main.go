@@ -10,10 +10,10 @@ import (
 )
 
 func main() {
-	// Task1()   //Human
-	// Task2()   //Squaring
-	// Task3_4() //Workers with correct completion by pressing Ctrl+C (SIGINT)
-	// Task5()   //Timeout per channel
+	Task1()   //Human
+	Task2()   //Squaring
+	Task3_4() //Workers with correct completion by pressing Ctrl+C (SIGINT)
+	Task5()   //Timeout per channel
 	Task6() //Goroutine Stops
 }
 
