@@ -76,4 +76,8 @@ func Task7() {
 	fmt.Println("<-- Task 7 Concurrent entry in the map -->")
 
 	concurrentEntry.ConcurrentEntryMutex()
+
+	fmt.Println()
+
+	concurrentEntry.ConcurrentEntryMap()
 }
