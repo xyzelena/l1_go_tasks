@@ -5,6 +5,7 @@ import (
 	"l1/concurrentEntry"
 	"l1/goroutineStops"
 	"l1/human"
+	"l1/settingBit"
 	"l1/squaring"
 	"l1/timeoutChannel"
 	"l1/workers"
@@ -16,7 +17,8 @@ func main() {
 	// Task3_4() //Workers with correct completion by pressing Ctrl+C (SIGINT)
 	// Task5()   //Timeout per channel
 	// Task6() //Goroutine Stops
-	Task7() //Concurrent Entry
+	// Task7() //Concurrent Entry
+	Task8() //Setting Bit
 }
 
 func Task1() {
@@ -80,4 +82,18 @@ func Task7() {
 	fmt.Println()
 
 	concurrentEntry.ConcurrentEntryMap()
+}
+
+func Task8() {
+	fmt.Println()
+	fmt.Println("<-- Task 8 Setting Bit Operations -->")
+
+	var x int64 = 5 // 0101₂
+    fmt.Printf("Before setting bit: %d (%04b)\n", x, x)
+
+    y, old := settingBit.SetBit(x, 1, 0) 
+    fmt.Printf("After setting 1-st bit to 0: %d (%04b), old bit = %d\n", y, y, old)
+
+    z, old := settingBit.SetBit(x, 1, 1) 
+    fmt.Printf("After setting 1-st bit to 1: %d (%04b), old bit = %d\n", z, z, old)
 }
