@@ -5,11 +5,12 @@ import (
 	"l1/concurrentEntry"
 	"l1/goroutineStops"
 	"l1/human"
+	"l1/pipeline"
 	"l1/settingBit"
 	"l1/squaring"
+	"l1/tempgrouping"
 	"l1/timeoutChannel"
 	"l1/workers"
-	"l1/pipeline"
 )
 
 func main() {
@@ -20,7 +21,8 @@ func main() {
 	// Task6() //Goroutine Stops
 	// Task7() //Concurrent Entry
 	// Task8() //Setting Bit
-	Task9() //Pipeline
+	// Task9() //Pipeline
+	Task10() //Temperature Grouping
 }
 
 func Task1() {
@@ -92,13 +94,13 @@ func Task8() {
 	fmt.Println("<-- Task 8 Setting Bit Operations -->")
 
 	var x int64 = 5 // 0101₂
-    fmt.Printf("Before setting bit: %d (%04b)\n", x, x)
+	fmt.Printf("Before setting bit: %d (%04b)\n", x, x)
 
-    y, old := settingBit.SetBit(x, 1, 0) 
-    fmt.Printf("After setting 1-st bit to 0: %d (%04b), old bit = %d\n", y, y, old)
+	y, old := settingBit.SetBit(x, 1, 0)
+	fmt.Printf("After setting 1-st bit to 0: %d (%04b), old bit = %d\n", y, y, old)
 
-    z, old := settingBit.SetBit(x, 1, 1) 
-    fmt.Printf("After setting 1-st bit to 1: %d (%04b), old bit = %d\n", z, z, old)
+	z, old := settingBit.SetBit(x, 1, 1)
+	fmt.Printf("After setting 1-st bit to 1: %d (%04b), old bit = %d\n", z, z, old)
 }
 
 func Task9() {
@@ -106,4 +108,11 @@ func Task9() {
 	fmt.Println("<-- Task 9 Pipeline -->")
 
 	pipeline.Pipeline()
+}
+
+func Task10() {
+	fmt.Println()
+	fmt.Println("<-- Task 10 Temperature Grouping -->")
+
+	tempgrouping.TempGrouping()
 }
