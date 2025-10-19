@@ -5,10 +5,11 @@ import (
 	"l1/concurrentEntry"
 	"l1/goroutineStops"
 	"l1/human"
+	"l1/intersectionSets"
 	"l1/pipeline"
 	"l1/settingBit"
 	"l1/squaring"
-	"l1/tempgrouping"
+	"l1/tempGrouping"
 	"l1/timeoutChannel"
 	"l1/workers"
 )
@@ -18,11 +19,12 @@ func main() {
 	// Task2()   //Squaring
 	// Task3_4() //Workers with correct completion by pressing Ctrl+C (SIGINT)
 	// Task5()   //Timeout per channel
-	// Task6() //Goroutine Stops
-	// Task7() //Concurrent Entry
-	// Task8() //Setting Bit
-	// Task9() //Pipeline
-	Task10() //Temperature Grouping
+	// Task6()   //Goroutine Stops
+	// Task7()   //Concurrent Entry
+	// Task8()   //Setting Bit
+	// Task9()   //Pipeline
+	// Task10()  //Temperature Grouping
+	Task11()  //Intersection of Sets
 }
 
 func Task1() {
@@ -114,5 +116,12 @@ func Task10() {
 	fmt.Println()
 	fmt.Println("<-- Task 10 Temperature Grouping -->")
 
-	tempgrouping.TempGrouping()
+	tempGrouping.TempGrouping()
+}
+
+func Task11() {
+	fmt.Println()
+	fmt.Println("<-- Task 11 Intersection of Sets -->")
+
+	intersectionSets.IntersectionSets()
 }

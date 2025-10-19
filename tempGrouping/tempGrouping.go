@@ -1,4 +1,4 @@
-package tempgrouping
+package tempGrouping
 
 import "fmt"
 
