@@ -7,6 +7,7 @@ import (
 	"l1/human"
 	"l1/intersectionSets"
 	"l1/pipeline"
+	"l1/setStrings"
 	"l1/settingBit"
 	"l1/squaring"
 	"l1/tempGrouping"
@@ -24,7 +25,8 @@ func main() {
 	// Task8()   //Setting Bit
 	// Task9()   //Pipeline
 	// Task10()  //Temperature Grouping
-	Task11()  //Intersection of Sets
+	// Task11()  //Intersection of Sets
+	Task12() //Set of unique strings
 }
 
 func Task1() {
@@ -124,4 +126,11 @@ func Task11() {
 	fmt.Println("<-- Task 11 Intersection of Sets -->")
 
 	intersectionSets.IntersectionSets()
+}
+
+func Task12() {
+	fmt.Println()
+	fmt.Println("<-- Task 12 Set of unique strings -->")
+
+	setStrings.SetStrings()
 }

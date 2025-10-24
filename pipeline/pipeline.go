@@ -10,13 +10,13 @@ func Pipeline() {
 	ch1 := make(chan int)
 	ch2 := make(chan int)
 
-		go func() {
-			for _, x := range arr {
-				ch1 <- x 
-			}
-			close(ch1)
-		}()
-	
+	go func() {
+		for _, x := range arr {
+			ch1 <- x
+		}
+		close(ch1)
+	}()
+
 	go func() {
 		for v := range ch1 {
 			ch2 <- v * 2
@@ -27,5 +27,5 @@ func Pipeline() {
 	for v := range ch2 {
 		fmt.Println(v)
 	}
-	
+
 }
