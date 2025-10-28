@@ -13,6 +13,7 @@ import (
 	"l1/tempGrouping"
 	"l1/timeoutChannel"
 	"l1/workers"
+	"l1/exchangevalues"
 )
 
 func main() {
@@ -26,7 +27,8 @@ func main() {
 	// Task9()   //Pipeline
 	// Task10()  //Temperature Grouping
 	// Task11()  //Intersection of Sets
-	Task12() //Set of unique strings
+	// Task12() //Set of unique strings
+	Task13() //Exchange of values ​​without a third variable
 }
 
 func Task1() {
@@ -133,4 +135,13 @@ func Task12() {
 	fmt.Println("<-- Task 12 Set of unique strings -->")
 
 	setStrings.SetStrings()
+}
+
+func Task13() {
+	fmt.Println()
+	fmt.Println("<-- Task 13 Exchange of values ​​without a third variable -->")
+
+	exchangevalues.ExchangeValuesWithAdditionAndSubtraction()
+	exchangevalues.ExchangeValuesWithXOR()
+	exchangevalues.ExchangeValues()
 }
