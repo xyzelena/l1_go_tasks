@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"l1/concurrentEntry"
+	"l1/exchangeValues"
 	"l1/goroutineStops"
 	"l1/human"
 	"l1/intersectionSets"
@@ -12,8 +13,8 @@ import (
 	"l1/squaring"
 	"l1/tempGrouping"
 	"l1/timeoutChannel"
+	"l1/variableType"
 	"l1/workers"
-	"l1/exchangevalues"
 )
 
 func main() {
@@ -28,7 +29,8 @@ func main() {
 	// Task10()  //Temperature Grouping
 	// Task11()  //Intersection of Sets
 	// Task12() //Set of unique strings
-	Task13() //Exchange of values ​​without a third variable
+	// Task13() //Exchange of values ​​without a third variable
+	Task14() //Detect Variable Type
 }
 
 func Task1() {
@@ -139,9 +141,22 @@ func Task12() {
 
 func Task13() {
 	fmt.Println()
-	fmt.Println("<-- Task 13 Exchange of values ​​without a third variable -->")
+	fmt.Println("<-- Task 13 Exchange of values without a third variable -->")
 
-	exchangevalues.ExchangeValuesWithAdditionAndSubtraction()
-	exchangevalues.ExchangeValuesWithXOR()
-	exchangevalues.ExchangeValues()
+	exchangeValues.ExchangeValuesWithAdditionAndSubtraction()
+	exchangeValues.ExchangeValuesWithXOR()
+	exchangeValues.ExchangeValues()
+}
+
+func Task14() {
+	fmt.Println()
+	fmt.Println("<-- Task 14 Detect Variable Type -->")
+
+	variableType.DetectVariableType(1)
+	variableType.DetectVariableType("Hello")
+	variableType.DetectVariableType(true)
+	variableType.DetectVariableType(make(chan int))
+	variableType.DetectVariableType(nil)
+	variableType.DetectVariableType([]string{"a", "b"})
+	variableType.DetectVariableType(map[string]int{"a": 1, "b": 2})
 }

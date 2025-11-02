@@ -1,4 +1,4 @@
-package exchangevalues
+package exchangeValues
 
 import "fmt"
 
@@ -9,9 +9,9 @@ func ExchangeValuesWithAdditionAndSubtraction() {
 
 	fmt.Println("a =", a, "b =", b)
 
-	a = a + b 
-	b = a - b 
-	a = a - b 
+	a = a + b
+	b = a - b
+	a = a - b
 
 	fmt.Println("a =", a, "b =", b)
 }
@@ -41,4 +41,3 @@ func ExchangeValues() {
 
 	fmt.Println("a =", a, "b =", b)
 }
-
