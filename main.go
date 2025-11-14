@@ -8,6 +8,7 @@ import (
 	"l1/human"
 	"l1/intersectionSets"
 	"l1/pipeline"
+	"l1/quickSort"
 	"l1/setStrings"
 	"l1/settingBit"
 	"l1/squaring"
@@ -30,7 +31,8 @@ func main() {
 	// Task11()  //Intersection of Sets
 	// Task12() //Set of unique strings
 	// Task13() //Exchange of values ​​without a third variable
-	Task14() //Detect Variable Type
+	// Task14() //Detect Variable Type
+	Task15() //Quick Sort
 }
 
 func Task1() {
@@ -159,4 +161,15 @@ func Task14() {
 	variableType.DetectVariableType(nil)
 	variableType.DetectVariableType([]string{"a", "b"})
 	variableType.DetectVariableType(map[string]int{"a": 1, "b": 2})
+}
+
+func Task15() {
+	fmt.Println()
+	fmt.Println("<-- Task 15 Quick Sort -->")
+
+	arr := []int{3, 6, 8, 10, 1, 2, 1}
+	fmt.Println("Initial array:", arr)
+
+	sortedArr := quickSort.QuickSort(arr)
+	fmt.Println("Sorted array:", sortedArr)
 }
