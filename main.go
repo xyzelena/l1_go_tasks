@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"l1/binarySearch"
 	"l1/concurrentEntry"
 	"l1/exchangeValues"
 	"l1/goroutineStops"
@@ -32,7 +33,8 @@ func main() {
 	// Task12() //Set of unique strings
 	// Task13() //Exchange of values ​​without a third variable
 	// Task14() //Detect Variable Type
-	Task15() //Quick Sort
+	// Task15() //Quick Sort
+	Task16() //Binary Search
 }
 
 func Task1() {
@@ -172,4 +174,22 @@ func Task15() {
 
 	sortedArr := quickSort.QuickSort(arr)
 	fmt.Println("Sorted array:", sortedArr)
+}
+
+func Task16() {
+	fmt.Println()
+	fmt.Println("<-- Task 16 Binary Search with loop and recursion -->")
+
+	arr := []int{1, 2, 3, 4, 5}
+	fmt.Println("Initial array:", arr)
+	fmt.Println()
+
+	searchItemWithLoop := binarySearch.BinarySearchWithLoop(arr, 3)
+	fmt.Println("Search item:", 3)
+	fmt.Println("Index of search item with loop:", searchItemWithLoop)
+
+	fmt.Println()
+	searchItemWithRecursion := binarySearch.BinarySearchWithRecursion(arr, 2)
+	fmt.Println("Search item:", 2)
+	fmt.Println("Index of search item with recursion:", searchItemWithRecursion)
 }
