@@ -19,19 +19,23 @@ func BinarySearchWithLoop(arr []int, searchItem int) int {
 }
 
 func BinarySearchWithRecursion(arr []int, searchItem int) int {
-	if len(arr) == 0 {
+	return bsRec(arr, searchItem, 0, len(arr)-1)
+}
+
+func bsRec(arr []int, searchItem int, left, right int) int {
+	if left > right {
 		return -1
 	}
 
-	mid := len(arr) / 2
+	mid := (left + right) / 2
 
 	if arr[mid] == searchItem {
 		return mid
 	}
 
 	if arr[mid] < searchItem {
-		return BinarySearchWithRecursion(arr[mid+1:], searchItem)
+		return bsRec(arr, searchItem, mid+1, right)
 	}
 
-	return BinarySearchWithRecursion(arr[:mid], searchItem)
+	return bsRec(arr, searchItem, left, mid-1)
 }
