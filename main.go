@@ -7,6 +7,7 @@ import (
 	"l1/exchangeValues"
 	"l1/goroutineStops"
 	"l1/human"
+	"l1/incrementNum"
 	"l1/intersectionSets"
 	"l1/pipeline"
 	"l1/quickSort"
@@ -34,7 +35,8 @@ func main() {
 	// Task13() //Exchange of values ​​without a third variable
 	// Task14() //Detect Variable Type
 	// Task15() //Quick Sort
-	Task16() //Binary Search
+	// Task16() //Binary Search
+	Task17() //Increment Number with atomic and mutex
 }
 
 func Task1() {
@@ -192,4 +194,15 @@ func Task16() {
 	searchItemWithRecursion := binarySearch.BinarySearchWithRecursion(arr, 2)
 	fmt.Println("Search item:", 2)
 	fmt.Println("Index of search item with recursion:", searchItemWithRecursion)
+}
+
+func Task17() {
+	fmt.Println()
+	fmt.Println("<-- Task 17 Increment counter structure with mutex and atomic variants -->")
+	
+	incrementNum.IncrementMutex()
+	
+	fmt.Println()
+
+	incrementNum.IncrementAtomic()
 }
