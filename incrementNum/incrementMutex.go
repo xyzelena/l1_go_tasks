@@ -16,7 +16,6 @@ func (c *CounterMutex) doIncrement() {
 	c.mu.Unlock()
 }
 
-
 func (c *CounterMutex) getValue() int {
 	c.mu.Lock()
 	defer c.mu.Unlock()
@@ -26,7 +25,7 @@ func (c *CounterMutex) getValue() int {
 func IncrementMutex() {
 	var (
 		counter CounterMutex
-		wg sync.WaitGroup
+		wg      sync.WaitGroup
 	)
 
 	println("Increment with mutex. Initial value: ", counter.getValue())
@@ -45,4 +44,3 @@ func IncrementMutex() {
 
 	fmt.Println("Increment with mutex: ", counter.a)
 }
-

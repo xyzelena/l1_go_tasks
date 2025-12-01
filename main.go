@@ -11,6 +11,7 @@ import (
 	"l1/intersectionSets"
 	"l1/pipeline"
 	"l1/quickSort"
+	"l1/reverseString"
 	"l1/setStrings"
 	"l1/settingBit"
 	"l1/squaring"
@@ -36,7 +37,8 @@ func main() {
 	// Task14() //Detect Variable Type
 	// Task15() //Quick Sort
 	// Task16() //Binary Search
-	Task17() //Increment Number with atomic and mutex
+	// Task17() //Increment Number with atomic and mutex
+	Task18() //Reverse String
 }
 
 func Task1() {
@@ -199,10 +201,19 @@ func Task16() {
 func Task17() {
 	fmt.Println()
 	fmt.Println("<-- Task 17 Increment counter structure with mutex and atomic variants -->")
-	
+
 	incrementNum.IncrementMutex()
-	
+
 	fmt.Println()
 
 	incrementNum.IncrementAtomic()
+}
+
+func Task18() {
+	fmt.Println()
+	fmt.Println("<-- Task 18 Reverse String -->")
+
+	reverseString.ReverseString("hello")
+	fmt.Println()
+	reverseString.ReverseString("главрыба ☃️")
 }

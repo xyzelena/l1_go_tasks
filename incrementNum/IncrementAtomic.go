@@ -21,13 +21,13 @@ func (c *CounterAtomic) getValue() int {
 func IncrementAtomic() {
 	var (
 		counter CounterAtomic
-		wg sync.WaitGroup
+		wg      sync.WaitGroup
 	)
 
 	println("Increment with atomic. Initial value: ", counter.getValue())
 
 	wg.Add(100)
-	
+
 	for range 100 {
 		go func() {
 			defer wg.Done()
