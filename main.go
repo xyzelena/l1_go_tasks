@@ -18,6 +18,7 @@ import (
 	"l1/tempGrouping"
 	"l1/timeoutChannel"
 	"l1/variableType"
+	"l1/wordReversal"
 	"l1/workers"
 )
 
@@ -38,7 +39,8 @@ func main() {
 	// Task15() //Quick Sort
 	// Task16() //Binary Search
 	// Task17() //Increment Number with atomic and mutex
-	Task18() //Reverse String
+	// Task18() //Reverse String
+	Task19() //Word Reversal
 }
 
 func Task1() {
@@ -216,4 +218,20 @@ func Task18() {
 	reverseString.ReverseString("hello")
 	fmt.Println()
 	reverseString.ReverseString("главрыба ☃️")
+}
+
+func Task19() {
+	fmt.Println()
+	fmt.Println("<-- Task 19 Word Reversal -->")
+
+	wordReversal.ReverseWords("Hello, world!")
+	fmt.Println()
+
+	wordReversal.ReverseWords("sun dog snow")
+	fmt.Println()
+
+	wordReversal.ReverseWords("one")
+	fmt.Println()
+
+	wordReversal.ReverseWords("")
 }
