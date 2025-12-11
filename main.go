@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"l1/adapter"
 	"l1/binarySearch"
 	"l1/concurrentEntry"
 	"l1/exchangeValues"
@@ -40,7 +41,8 @@ func main() {
 	// Task16() //Binary Search
 	// Task17() //Increment Number with atomic and mutex
 	// Task18() //Reverse String
-	Task19() //Word Reversal
+	// Task19() //Word Reversal
+	adapter.AdapterExample()
 }
 
 func Task1() {
@@ -234,4 +236,11 @@ func Task19() {
 	fmt.Println()
 
 	wordReversal.ReverseWords("")
+}
+
+func Task20() {
+	fmt.Println()
+	fmt.Println("<-- Task 20 Adapter -->")
+
+	adapter.AdapterExample()
 }
