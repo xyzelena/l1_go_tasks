@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"l1/adapter"
+	"l1/bigNumbers"
 	"l1/binarySearch"
 	"l1/concurrentEntry"
 	"l1/exchangeValues"
@@ -24,25 +25,26 @@ import (
 )
 
 func main() {
-	// Task1()   //Human
-	// Task2()   //Squaring
-	// Task3_4() //Workers with correct completion by pressing Ctrl+C (SIGINT)
-	// Task5()   //Timeout per channel
-	// Task6()   //Goroutine Stops
-	// Task7()   //Concurrent Entry
-	// Task8()   //Setting Bit
-	// Task9()   //Pipeline
-	// Task10()  //Temperature Grouping
-	// Task11()  //Intersection of Sets
-	// Task12() //Set of unique strings
-	// Task13() //Exchange of values ​​without a third variable
-	// Task14() //Detect Variable Type
-	// Task15() //Quick Sort
-	// Task16() //Binary Search
-	// Task17() //Increment Number with atomic and mutex
-	// Task18() //Reverse String
-	// Task19() //Word Reversal
-	adapter.AdapterExample()
+	// Task1()   // Human
+	// Task2()   // Squaring
+	// Task3_4() // Workers with correct completion by pressing Ctrl+C (SIGINT)
+	// Task5()   // Timeout per channel
+	// Task6()   // Goroutine Stops
+	// Task7()   // Concurrent Entry
+	// Task8()   // Setting Bit
+	// Task9()   // Pipeline
+	// Task10()  // Temperature Grouping
+	// Task11()  // Intersection of Sets
+	// Task12() // Set of unique strings
+	// Task13() // Exchange of values ​​without a third variable
+	// Task14() // Detect Variable Type
+	// Task15() // Quick Sort
+	// Task16() // Binary Search
+	// Task17() // Increment Number with atomic and mutex
+	// Task18() // Reverse String
+	// Task19() // Word Reversal
+	// Task20() // Adapter pattern
+	Task21() // Large numbers and operations
 }
 
 func Task1() {
@@ -243,4 +245,11 @@ func Task20() {
 	fmt.Println("<-- Task 20 Adapter -->")
 
 	adapter.AdapterExample()
+}
+
+func Task21() {
+	fmt.Println()
+	fmt.Println("<-- Task 21 Large numbers and operations -->")
+
+	bigNumbers.BigNumbersDemo()
 }
