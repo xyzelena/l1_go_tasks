@@ -6,6 +6,7 @@ import (
 	"l1/bigNumbers"
 	"l1/binarySearch"
 	"l1/concurrentEntry"
+	"l1/deletingSliceElement"
 	"l1/exchangeValues"
 	"l1/goroutineStops"
 	"l1/human"
@@ -44,7 +45,8 @@ func main() {
 	// Task18() // Reverse String
 	// Task19() // Word Reversal
 	// Task20() // Adapter pattern
-	Task21() // Large numbers and operations
+	// Task21() // Large numbers and operations
+	Task22() // Deleting slice element
 }
 
 func Task1() {
@@ -252,4 +254,25 @@ func Task21() {
 	fmt.Println("<-- Task 21 Large numbers and operations -->")
 
 	bigNumbers.BigNumbersDemo()
+}
+
+func Task22() {
+	fmt.Println()
+	fmt.Println("<-- Task 22 Deleting slice element -->")
+
+	newSlice, err := deletingSliceElement.DeletingSliceElement([]int{1, 2, 3, 4, 5}, 4)
+
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+	fmt.Println("New slice:", newSlice)
+
+	fmt.Println()
+
+	_, err = deletingSliceElement.DeletingSliceElement([]int{}, 0)
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
 }
