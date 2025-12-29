@@ -7,6 +7,7 @@ import (
 	"l1/binarySearch"
 	"l1/concurrentEntry"
 	"l1/deletingSliceElement"
+	"l1/distancePoints"
 	"l1/exchangeValues"
 	"l1/goroutineStops"
 	"l1/human"
@@ -46,7 +47,8 @@ func main() {
 	// Task19() // Word Reversal
 	// Task20() // Adapter pattern
 	// Task21() // Large numbers and operations
-	Task22() // Deleting slice element
+	// Task22() // Deleting slice element
+	Task23() // Distance between points
 }
 
 func Task1() {
@@ -275,4 +277,14 @@ func Task22() {
 		fmt.Println("Error:", err)
 		return
 	}
+}
+
+func Task23() {
+	fmt.Println()
+	fmt.Println("<-- Task 23 Distance between points -->")
+
+	point1 := distancePoints.NewPoint(1, 2)
+	point2 := distancePoints.NewPoint(3, 4)
+	result := point1.Distance(*point2)
+	fmt.Println("Distance between points:", result)
 }
