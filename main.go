@@ -18,12 +18,14 @@ import (
 	"l1/reverseString"
 	"l1/setStrings"
 	"l1/settingBit"
+	"l1/sleep"
 	"l1/squaring"
 	"l1/tempGrouping"
 	"l1/timeoutChannel"
 	"l1/variableType"
 	"l1/wordReversal"
 	"l1/workers"
+	"time"
 )
 
 func main() {
@@ -48,7 +50,8 @@ func main() {
 	// Task20() // Adapter pattern
 	// Task21() // Large numbers and operations
 	// Task22() // Deleting slice element
-	Task23() // Distance between points
+	// Task23() // Distance between points
+	Task24() // Function Sleep
 }
 
 func Task1() {
@@ -287,4 +290,11 @@ func Task23() {
 	point2 := distancePoints.NewPoint(3, 4)
 	result := point1.Distance(*point2)
 	fmt.Println("Distance between points:", result)
+}
+
+func Task24() {
+	fmt.Println()
+	fmt.Println("<-- Task 24 Function Sleep -->")
+
+	sleep.Sleep(1 * time.Second)
 }
