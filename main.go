@@ -22,6 +22,7 @@ import (
 	"l1/squaring"
 	"l1/tempGrouping"
 	"l1/timeoutChannel"
+	"l1/uniqueSymbols"
 	"l1/variableType"
 	"l1/wordReversal"
 	"l1/workers"
@@ -51,7 +52,8 @@ func main() {
 	// Task21() // Large numbers and operations
 	// Task22() // Deleting slice element
 	// Task23() // Distance between points
-	Task24() // Function Sleep
+	// Task24() // Function Sleep
+	Task25() // Checking the uniqueness of characters in a string
 }
 
 func Task1() {
@@ -297,4 +299,27 @@ func Task24() {
 	fmt.Println("<-- Task 24 Function Sleep -->")
 
 	sleep.Sleep(1 * time.Second)
+}
+
+func Task25() {
+	fmt.Println()
+	fmt.Println("<-- Task 25 Checking the uniqueness of characters in a string -->")
+
+	result, err := uniqueSymbols.CheckUniqueSymbols("abcdA")
+
+	if err != nil {
+		fmt.Println("Error: ", err)
+	}
+
+	fmt.Println("Result: ", result)
+
+	fmt.Println()
+
+	result1, err1 := uniqueSymbols.CheckUniqueSymbols("abcd")
+
+	if err1 != nil {
+		fmt.Println("Error: ", err1)
+	}
+
+	fmt.Println("Result: ", result1)
 }
